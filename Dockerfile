@@ -31,4 +31,4 @@ RUN cd /tmp && curl -O https://raw.githubusercontent.com/x90skysn3k/dotfiles/mai
 
 WORKDIR /root/
 
-CMD [ "zsh" ]
+CMD [ "tmux" ]

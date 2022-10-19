@@ -7,9 +7,7 @@ ENV TERM xterm-256color
 ENV HOME /root
 ENV TMUX_PLUGIN_MANAGER_PATH "$HOME/.tmux/plugins/"
 ENV PROXYCHAINS_QUIET_MODE 1
-ENV DISPLAY host.docker.internal:0
 RUN echo "LANG=en_US.UTF-8" > /etc/locale.conf
-RUN echo "ILoveCandy" >> /etc/pacman.conf
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 RUN locale-gen
 
@@ -24,7 +22,7 @@ RUN alias ua-update-all='export TMPFILE="$(mktemp)"; \
 
 RUN pacman-key --init && \
     pacman -Syu --noconfirm && \
-    pacman -S curl linux linux-firmware --noconfirm 
+    pacman -S curl --noconfirm 
 
 RUN curl -o /etc/proxychains.conf https://raw.githubusercontent.com/x90skysn3k/dotfiles/main/proxychains.conf
 

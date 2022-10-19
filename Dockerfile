@@ -24,7 +24,7 @@ RUN alias ua-update-all='export TMPFILE="$(mktemp)"; \
 
 RUN pacman-key --init && \
     pacman -Syu --noconfirm && \
-    pacman -S curl --noconfirm 
+    pacman -S curl linux linux-firmware --noconfirm 
 
 RUN curl -o /etc/proxychains.conf https://raw.githubusercontent.com/x90skysn3k/dotfiles/main/proxychains.conf
 
